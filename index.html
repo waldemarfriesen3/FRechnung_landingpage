@@ -344,6 +344,19 @@
     .footer-links a:hover { color: var(--accent); }
     .footer-mit { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 
+    /* ── SCREENSHOTS ── */
+    .step-screenshot {
+      margin-top: 16px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 4px 4px 0 var(--border);
+    }
+    .step-screenshot img {
+      width: 100%;
+      display: block;
+    }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
@@ -534,6 +547,9 @@
             Steuernummer und optional das Firmenlogo eintragen.
             Einmal speichern — fertig für alle künftigen Rechnungen.
           </div>
+          <div class="step-screenshot">
+            <img src="Dienstleister.PNG" alt="Screenshot: Tab Dienstleister — Firmendaten eintragen"/>
+          </div>
         </div>
       </div>
 
@@ -546,6 +562,9 @@
             oder <code>B2G</code> für Behörden wählen. Kundenname und Adresse eintragen —
             bei B2G zusätzlich die Leitweg-ID des Auftraggebers.
           </div>
+          <div class="step-screenshot">
+            <img src="Rechnungsdaten1.PNG" alt="Screenshot: Rechnungsart und Kundendaten eintragen"/>
+          </div>
         </div>
       </div>
 
@@ -557,6 +576,9 @@
             Positionen mit Bezeichnung, Menge und Netto-Einzelpreis eintragen.
             Rabatt und Umsatzsteuersatz anpassen. Im Dropdown das gewünschte
             PDF-Design auswählen und auf <code>PDF generieren</code> klicken.
+          </div>
+          <div class="step-screenshot">
+            <img src="Rechnungsdaten2.PNG" alt="Screenshot: Artikel eintragen und Design wählen"/>
           </div>
         </div>
       </div>
@@ -591,7 +613,7 @@
           Ein Code-Signing-Zertifikat würde das beheben — kostet aber Geld, das ich für ein kostenloses
           Open-Source-Projekt nicht ausgeben werde. Wer skeptisch ist: der komplette Quellcode liegt
           offen auf <a href="https://github.com/waldemarfriesen3/FRechnung.git" target="_blank" style="color:var(--accent); font-family:var(--mono); font-size:13px;">GitHub</a>,
-          jeder kann reinschauen.
+          jeder kann reinschauen. Zum Starten einfach <strong>„Weitere Informationen" → „Trotzdem ausführen"</strong> klicken.
         </p>
       </div>
     </div>
