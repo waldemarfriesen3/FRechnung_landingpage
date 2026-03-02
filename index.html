@@ -10,12 +10,12 @@
   <meta name="author" content="Waldemar Friesen"/>
   <meta name="robots" content="index, follow"/>
   <meta name="language" content="de"/>
-  <link rel="canonical" href="https://figeloman.github.io/FRechnung/"/>
+  <link rel="canonical" href="https://frechnung.de/"/>
 
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="FRechnung — Kostenlose E-Rechnung Software | ZUGFeRD 2.2"/>
   <meta property="og:description" content="Kostenlose E-Rechnung Software für Freiberufler & kleine Unternehmen. ZUGFeRD 2.2 konforme PDFs — kein Abo, keine Cloud, sofort einsatzbereit."/>
-  <meta property="og:url" content="https://figeloman.github.io/FRechnung/"/>
+  <meta property="og:url" content="https://frechnung.de/"/>
   <meta property="og:locale" content="de_DE"/>
   <meta property="og:site_name" content="FRechnung"/>
 
@@ -34,7 +34,7 @@
     "description": "Kostenlose E-Rechnung Software für Freiberufler, Selbständige und kleine Unternehmen. Erstellt ZUGFeRD 2.2 konforme PDFs ohne Abo oder Cloud.",
     "softwareVersion": "1.1",
     "license": "https://opensource.org/licenses/MIT",
-    "downloadUrl": "https://github.com/FigeloMan/FRechnung/releases/download/v1.1/FRechnungv.1.1.exe",
+    "downloadUrl": "https://frechnung.de/download/FRechnungv.1.1.exe",
     "author": { "@type": "Person", "name": "Waldemar Friesen", "email": "waldemarfriesen3@gmail.com" },
     "keywords": "E-Rechnung, ZUGFeRD, Factur-X, Freiberufler, Rechnungssoftware, kostenlos",
     "inLanguage": "de"
@@ -214,7 +214,15 @@
     .web-step-num { font-family: var(--mono); font-weight: 800; font-size: 12px; color: var(--accent); letter-spacing: 0.1em; flex-shrink: 0; width: 28px; padding-top: 3px; }
     .web-step-title { font-family: var(--mono); font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 5px; }
     .web-step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .ic { font-family: var(--mono); font-size: 12px; background: var(--paper2); padding: 2px 6px; border-radius: 3px; color: var(--accent); border: 1px solid var(--border); }
+    .ic {
+      font-family: var(--mono); font-size: 12px; background: var(--paper2);
+      padding: 2px 6px; border-radius: 3px; color: var(--accent);
+      border: 1px solid var(--border);
+    }
+    a.ic {
+      text-decoration: none; transition: background 0.2s, color 0.2s;
+    }
+    a.ic:hover { background: var(--accent); color: var(--paper); border-color: var(--accent); }
     .folder-tree {
       background: var(--ink2); border-radius: 8px; padding: 24px 28px;
       font-family: var(--mono); font-size: 13px; color: rgba(245,240,232,0.75);
@@ -310,6 +318,19 @@
     .step-screenshot { margin-top: 16px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 4px 4px 0 var(--border); }
     .step-screenshot img { width: 100%; display: block; }
 
+    /* ── DATENSCHUTZ ── */
+    .datenschutz { padding: 90px 0; border-top: 1px solid var(--border); }
+    .datenschutz-box { max-width: 720px; background: var(--paper2); border: 1px solid var(--border); border-radius: 8px; padding: 40px 44px; position: relative; }
+    .datenschutz-box::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--green); border-radius: 8px 0 0 8px; }
+    .datenschutz-section { margin-bottom: 32px; }
+    .datenschutz-section:last-child { margin-bottom: 0; }
+    .datenschutz-section-title { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+    .datenschutz-section p { font-size: 15px; color: #4a5568; line-height: 1.75; margin-bottom: 10px; }
+    .datenschutz-section p:last-child { margin-bottom: 0; }
+    .datenschutz-section p strong { color: var(--ink); font-weight: 600; font-style: normal; }
+    .datenschutz-section a { color: var(--accent); font-family: var(--mono); font-size: 13px; text-decoration: none; }
+    .datenschutz-section a:hover { text-decoration: underline; }
+
     /* ── IMPRESSUM ── */
     .impressum { padding: 90px 0; border-top: 1px solid var(--border); }
     .impressum-box { max-width: 640px; background: var(--paper2); border: 1px solid var(--border); border-radius: 8px; padding: 40px 44px; position: relative; }
@@ -331,6 +352,43 @@
     .footer-links a:hover { color: var(--accent); }
     .footer-mit { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 
+    /* ── COOKIE BANNER ── */
+    #cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: var(--ink2);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 32px;
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+      box-shadow: 0 -8px 40px rgba(0,0,0,0.25);
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #cookie-banner.visible { transform: translateY(0); }
+    .cookie-text {
+      flex: 1; min-width: 260px;
+      font-family: var(--mono); font-size: 12px; color: rgba(245,240,232,0.65);
+      line-height: 1.65;
+    }
+    .cookie-text strong { color: rgba(245,240,232,0.9); }
+    .cookie-text a { color: var(--accent2); text-decoration: none; }
+    .cookie-text a:hover { text-decoration: underline; }
+    .cookie-actions { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
+    .cookie-btn {
+      font-family: var(--mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 9px 18px; border-radius: 4px; cursor: pointer;
+      border: 1.5px solid transparent; transition: all 0.2s;
+    }
+    .cookie-btn-accept {
+      background: var(--accent); color: var(--paper); border-color: var(--accent);
+    }
+    .cookie-btn-accept:hover { background: var(--accent2); border-color: var(--accent2); }
+    .cookie-btn-decline {
+      background: transparent; color: rgba(245,240,232,0.5);
+      border-color: rgba(245,240,232,0.15);
+    }
+    .cookie-btn-decline:hover { color: rgba(245,240,232,0.9); border-color: rgba(245,240,232,0.4); }
+
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
     @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
 
@@ -347,6 +405,8 @@
     @media (max-width: 520px) {
       .feature-grid { grid-template-columns: 1fr; }
       h1 { font-size: 32px; }
+      .datenschutz-box, .impressum-box { padding: 28px 24px; }
+      #cookie-banner { padding: 16px 20px; }
     }
   </style>
 </head>
@@ -366,6 +426,19 @@
 }
 </script>
 
+<!-- ── COOKIE BANNER ── -->
+<div id="cookie-banner" role="region" aria-label="Cookie-Hinweis">
+  <div class="cookie-text">
+    <strong>Diese Website verwendet technisch notwendige Cookies.</strong>
+    Cloudflare (unser CDN &amp; Hosting-Anbieter) setzt Session-Cookies für Sicherheit und Performance (<code style="font-size:11px; color:rgba(245,240,232,0.5);">__cf_bm</code>, <code style="font-size:11px; color:rgba(245,240,232,0.5);">_cfuvid</code>). Es werden keine Tracking- oder Werbe-Cookies gesetzt.
+    Mehr Infos in der <a href="#datenschutz">Datenschutzerklärung</a>.
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-decline" onclick="cookieDecline()">Nur notwendige</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()">Verstanden</button>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -381,6 +454,7 @@
       <a href="#demo">Demo</a>
       <a href="#anleitung">Anleitung</a>
       <a href="#faq">FAQ</a>
+      <a href="#datenschutz">Datenschutz</a>
       <a href="#impressum">Impressum</a>
       <a href="https://github.com/FigeloMan/FRechnung.git" target="_blank" class="nav-cta">GitHub ↗</a>
     </div>
@@ -473,15 +547,26 @@
     </div>
     <div class="web-version-grid">
       <div>
-        <p style="font-size:17px; color:#4a5568; margin-bottom:20px;">Keine Lust auf eine .exe? Der Branch <span class="ic">web_anwendung</span> liefert FRechnung als <strong style="color:var(--ink)">lokalen Python-Webserver</strong> — gleiche Funktionen, gleiche Oberfläche, direkt im Browser bedienbar.</p>
-        <p style="font-size:17px; color:#4a5568; margin-bottom:28px;">Ideal für alle, die lieber im Browser arbeiten, eine bestehende Python-Umgebung nutzen oder den Code anpassen möchten.</p>
+        <p style="font-size:17px; color:#4a5568; margin-bottom:20px;">
+          Keine Lust auf eine .exe? Der Branch
+          <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank" class="ic">web_anwendung</a>
+          liefert FRechnung als <strong style="color:var(--ink)">lokalen Python-Webserver</strong> — gleiche Funktionen, gleiche Oberfläche, direkt im Browser bedienbar.
+        </p>
+        <p style="font-size:17px; color:#4a5568; margin-bottom:28px;">
+          Ideal für alle, die lieber im Browser arbeiten, eine bestehende Python-Umgebung nutzen oder den Code anpassen möchten.
+        </p>
 
         <div class="web-steps">
           <div class="web-step">
             <div class="web-step-num">01</div>
             <div>
               <div class="web-step-title">Branch herunterladen</div>
-              <div class="web-step-desc">Repository klonen oder Branch <span class="ic">web_anwendung</span> als ZIP von GitHub laden und entpacken.</div>
+              <div class="web-step-desc">
+                <a href="https://github.com/FigeloMan/FRechnung/archive/refs/heads/web_anwendung.zip" target="_blank" class="ic" style="margin-right:6px;">ZIP herunterladen ↓</a>
+                oder Repository klonen und Branch
+                <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank" class="ic">web_anwendung</a>
+                auschecken.
+              </div>
             </div>
           </div>
           <div class="web-step">
@@ -538,7 +623,11 @@
 
         <div class="info-box" style="background:rgba(26,122,60,0.05); border-left:3px solid var(--green); margin-top:16px;">
           <div class="info-box-label" style="color:var(--green);">// Tipp</div>
-          <p>Wer FRechnung anpassen oder als Basis nutzen möchte — alles steckt in <span class="ic">server.py</span> und <span class="ic">frontend/index.html</span>.</p>
+          <p>
+            Wer FRechnung anpassen oder als Basis nutzen möchte — alles steckt in <span class="ic">server.py</span> und <span class="ic">frontend/index.html</span>.
+            Direkt auf GitHub:
+            <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank" class="ic">Branch ansehen ↗</a>
+          </p>
         </div>
       </div>
     </div>
@@ -705,6 +794,102 @@
   </div>
 </section>
 
+<!-- DATENSCHUTZ -->
+<section class="datenschutz" id="datenschutz">
+  <div class="wrap">
+    <div class="section-header" style="text-align:left; margin-bottom:36px;">
+      <div class="story-label">// Rechtliches</div>
+      <h2 style="margin-top:8px">Datenschutzerklärung</h2>
+    </div>
+    <div class="datenschutz-box">
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">1. Verantwortlicher</div>
+        <p>
+          Waldemar Friesen (Privatperson / Entwickler)<br/>
+          E-Mail: <a href="/cdn-cgi/l/email-protection#6710060b03020a061501150e021402095427000a060e0b4904080a"><span class="__cf_email__" data-cfemail="8afdebe6eeefe7ebf8ecf8e3eff9efe4b9caede7ebe3e6a4e9e5e7">[email&#160;protected]</span></a>
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">2. Hosting &amp; Infrastruktur (Cloudflare)</div>
+        <p>
+          Diese Website wird über <strong>GitHub Pages</strong> bereitgestellt und nutzt <strong>Cloudflare</strong> als Content Delivery Network (CDN) und DNS-Anbieter. Cloudflare ist ein US-amerikanisches Unternehmen mit Sitz in San Francisco, CA.
+        </p>
+        <p>
+          Beim Aufruf dieser Website werden technisch notwendige Daten an Cloudflare übermittelt, insbesondere deine <strong>IP-Adresse</strong>, Browsertyp, Betriebssystem, Referrer-URL, Datum und Uhrzeit des Zugriffs. Diese Verarbeitung dient der Bereitstellung, Absicherung und Performance-Optimierung der Website (Art. 6 Abs. 1 lit. f DSGVO — berechtigtes Interesse).
+        </p>
+        <p>
+          Cloudflare setzt folgende technisch notwendige Cookies, die keine Einwilligung erfordern:
+        </p>
+        <p>
+          <strong>__cf_bm</strong> — Dauer: 30 Minuten — Dient zum Schutz vor automatisierten Bot-Angriffen (Bot-Management). Kein Tracking-Cookie.<br/>
+          <strong>_cfuvid</strong> — Dauer: Session — Dient der Rate-Limiting-Identifikation bei häufigen Zugriffen. Kein Tracking-Cookie.
+        </p>
+        <p>
+          Weitere Informationen zur Datenverarbeitung durch Cloudflare findest du in der <a href="https://www.cloudflare.com/de-de/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare Datenschutzerklärung</a>. Cloudflare verarbeitet Daten u.a. in den USA auf Grundlage von Standardvertragsklauseln (SCCs) gemäß Art. 46 DSGVO.
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">3. Keine eigene Datenerhebung</div>
+        <p>
+          Diese Website setzt <strong>keine eigenen Analyse-, Tracking- oder Werbe-Cookies</strong>. Es werden keine personenbezogenen Daten durch den Website-Betreiber erhoben, gespeichert oder an Dritte weitergegeben. Es existiert kein Kontaktformular, keine Registrierung, kein Newsletter.
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">4. Google Fonts</div>
+        <p>
+          Diese Website lädt Schriftarten (JetBrains Mono, Crimson Pro) von <strong>Google Fonts</strong> (Google LLC, USA). Dabei wird deine IP-Adresse an Google übermittelt. Dies dient der korrekten Darstellung der Website (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Datenschutzerklärung</a>.
+        </p>
+        <p>
+          <em>Hinweis:</em> Wer dies vermeiden möchte, kann die Schriftarten auch lokal selbst hosten — der Quellcode steht auf GitHub zur Verfügung.
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">5. Eingebettete Demo (Railway.app)</div>
+        <p>
+          Im Demo-Bereich dieser Website ist eine externe Anwendung via <code style="font-family:var(--mono); font-size:13px; color:var(--accent);">&lt;iframe&gt;</code> von <strong>railway.app</strong> eingebunden. Beim Laden des iFrames wird eine Verbindung zu den Servern von Railway (Railway Corp., USA) hergestellt. Dabei kann deine IP-Adresse verarbeitet werden. Die Nutzung der Demo ist freiwillig.
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">6. GitHub (Downloadlinks &amp; Repository)</div>
+        <p>
+          Download-Links und Quellcode führen zu <strong>GitHub</strong> (GitHub Inc., USA, ein Microsoft-Unternehmen). Beim Aufrufen dieser Links gelten die Datenschutzbestimmungen von GitHub: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">GitHub Datenschutzerklärung</a>.
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">7. FRechnung-App (Desktop &amp; Web-Version)</div>
+        <p>
+          Die FRechnung-Software selbst läuft <strong>vollständig lokal</strong> auf dem Gerät des Nutzers. Es werden keine Daten an externe Server übertragen. Firmendaten werden verschlüsselt lokal gespeichert (AES-128 / Fernet, Schlüssel im Windows Credential Store). Die App benötigt keine Internetverbindung.
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">8. Betroffenenrechte</div>
+        <p>
+          Du hast nach DSGVO das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie Widerspruch (Art. 21). Da durch den Website-Betreiber selbst keine personenbezogenen Daten gespeichert werden, gibt es diesbezüglich nichts zu löschen oder auszukünften. Für Cloudflare-bezogene Anfragen wende dich direkt an Cloudflare.
+        </p>
+        <p>
+          Du hast außerdem das Recht, dich bei einer Datenschutzbehörde zu beschweren. Zuständig für Deutschland ist der jeweilige Landesdatenschutzbeauftragte.
+        </p>
+      </div>
+
+      <div class="datenschutz-section">
+        <div class="datenschutz-section-title">9. Aktualität</div>
+        <p>
+          Diese Datenschutzerklärung wurde zuletzt im <strong>März 2025</strong> aktualisiert und gilt für die Website unter <a href="https://frechnung.de/" target="_blank">frechnung.de</a>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- IMPRESSUM -->
 <section class="impressum" id="impressum">
   <div class="wrap">
@@ -714,7 +899,7 @@
     </div>
     <div class="impressum-box">
       <div class="impressum-section"><div class="impressum-section-title">Angaben gemäß § 5 TMG</div><p>Waldemar Friesen<br/>Privatperson / Entwickler</p></div>
-      <div class="impressum-section"><div class="impressum-section-title">Kontakt</div><p>E-Mail: <a href="mailto:waldemarfriesen3@gmail.com">waldemarfriesen3@gmail.com</a></p></div>
+      <div class="impressum-section"><div class="impressum-section-title">Kontakt</div><p>E-Mail: <a href="/cdn-cgi/l/email-protection#05726469616068647763776c6076606b36456268646c692b666a68"><span class="__cf_email__" data-cfemail="d1a6b0bdb5b4bcb0a3b7a3b8b4a2b4bfe291b6bcb0b8bdffb2bebc">[email&#160;protected]</span></a></p></div>
       <div class="impressum-section"><div class="impressum-section-title">Haftungsausschluss</div><p>FRechnung ist ein privates Open-Source-Projekt und wird ohne Gewähr bereitgestellt. Für die Richtigkeit, Vollständigkeit oder Aktualität der erzeugten Rechnungen übernehme ich keine Haftung. Die Nutzung erfolgt auf eigene Verantwortung. Steuerliche oder rechtliche Fragen sind stets mit einem Fachkundigen zu klären.</p></div>
       <div class="impressum-section"><div class="impressum-section-title">Urheberrecht</div><p>Der Quellcode steht unter der MIT-Lizenz und ist frei verwendbar. Details auf <a href="https://github.com/FigeloMan/FRechnung.git" target="_blank">GitHub</a>.</p></div>
     </div>
@@ -731,7 +916,7 @@
     <div style="max-width:720px; margin:0 auto;">
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Ist FRechnung wirklich kostenlos?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Ja — vollständig. Kein Abo, keine Testphase, keine versteckten Kosten. FRechnung ist Open Source unter der MIT-Lizenz.</p></details>
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Erfüllt FRechnung die gesetzliche E-Rechnungspflicht ab 2025?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">FRechnung erzeugt ZUGFeRD 2.2 / Factur-X konforme PDFs mit eingebettetem EN 16931 XML. Diese werden von Finanzämtern und PEPPOL-Portalen akzeptiert.</p></details>
-      <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Was ist der Unterschied zwischen Desktop und Web-Version?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Die Desktop-App (.exe) braucht kein Python und startet sofort — ideal für die meisten Nutzer. Die Web-Version (Branch <code style="font-family:var(--mono); font-size:13px; color:var(--accent);">web_anwendung</code>) läuft als lokaler Python-Server im Browser — für alle, die lieber im Browser arbeiten oder den Code anpassen möchten.</p></details>
+      <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Was ist der Unterschied zwischen Desktop und Web-Version?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Die Desktop-App (.exe) braucht kein Python und startet sofort — ideal für die meisten Nutzer. Die Web-Version (Branch <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank" class="ic">web_anwendung ↗</a>) läuft als lokaler Python-Server im Browser — für alle, die lieber im Browser arbeiten oder den Code anpassen möchten.</p></details>
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Wie sicher sind meine gespeicherten Firmendaten?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Sehr sicher. Ab v1.1 werden alle Firmendaten mit Fernet-Verschlüsselung (AES-128) als .dat-Datei gespeichert. Der Schlüssel liegt im Windows Credential Store — dem gleichen Tresor wie WLAN-Passwörter. Niemand kann die Datei ohne den passenden Schlüssel lesen.</p></details>
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Werden meine Daten in die Cloud hochgeladen?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Nein. FRechnung läuft vollständig lokal. Keine Internetverbindung nötig, keine Server, keine Datenübertragung.</p></details>
       <details style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Warum warnt Windows SmartScreen beim Start?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">SmartScreen zeigt eine Warnung, weil die EXE noch keine Download-Reputation bei Microsoft hat. Der vollständige Quellcode ist öffentlich auf GitHub einsehbar. Einfach „Weitere Informationen" → „Trotzdem ausführen" klicken.</p></details>
@@ -750,10 +935,11 @@
     </div>
     <div class="footer-links">
       <a href="https://github.com/FigeloMan/FRechnung.git" target="_blank">GitHub</a>
-      <a href="#web-version">Web-Version</a>
+      <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank">Web-Version</a>
       <a href="#sicherheit">Sicherheit</a>
       <a href="#demo">Demo</a>
       <a href="#anleitung">Anleitung</a>
+      <a href="#datenschutz">Datenschutz</a>
       <a href="#impressum">Impressum</a>
     </div>
     <div class="footer-mit">Gebaut mit ❤️ für Freiberufler & kleine Unternehmen</div>
@@ -761,17 +947,45 @@
 </footer>
 
 <script>
+  // COOKIE BANNER
+  const COOKIE_KEY = "frechnung_cookie_consent";
+  function cookieAccept() {
+    try { localStorage.setItem(COOKIE_KEY, "accepted"); } catch(e) {}
+    hideBanner();
+  }
+  function cookieDecline() {
+    try { localStorage.setItem(COOKIE_KEY, "declined"); } catch(e) {}
+    hideBanner();
+  }
+  function hideBanner() {
+    const b = document.getElementById("cookie-banner");
+    b.style.transform = "translateY(100%)";
+    setTimeout(() => b.style.display = "none", 400);
+  }
+  (function() {
+    try {
+      const consent = localStorage.getItem(COOKIE_KEY);
+      if (!consent) {
+        setTimeout(() => { document.getElementById("cookie-banner").classList.add("visible"); }, 800);
+      }
+    } catch(e) {
+      setTimeout(() => { document.getElementById("cookie-banner").classList.add("visible"); }, 800);
+    }
+  })();
+</script>
+<script>
+  // SCROLL ANIMATIONS
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.style.animationPlayState = 'running';
+        e.target.style.animationPlayState = "running";
         observer.unobserve(e.target);
       }
     });
   }, { threshold: 0.15 });
-  document.querySelectorAll('.step, .feat').forEach((el, i) => {
-    el.style.animationDelay = (i * 0.07) + 's';
-    el.style.animationPlayState = 'paused';
+  document.querySelectorAll(".step, .feat").forEach((el, i) => {
+    el.style.animationDelay = (i * 0.07) + "s";
+    el.style.animationPlayState = "paused";
     observer.observe(el);
   });
 </script>
