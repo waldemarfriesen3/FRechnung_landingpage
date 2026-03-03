@@ -35,7 +35,7 @@
     "softwareVersion": "1.1",
     "license": "https://opensource.org/licenses/MIT",
     "downloadUrl": "https://frechnung.de/download/FRechnungv.1.1.exe",
-    "author": { "@type": "Person", "name": "Waldemar Friesen", "email": "waldemarfriesen3@gmail.com" },
+    "author": { "@type": "Person", "name": "Waldemar Friesen", "email": "info@frechnung.de" },
     "keywords": "E-Rechnung, ZUGFeRD, Factur-X, Freiberufler, Rechnungssoftware, kostenlos",
     "inLanguage": "de"
   }
@@ -178,6 +178,15 @@
       box-shadow: 4px 4px 0 var(--ink);
     }
     .btn-demo:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink2); opacity: 0.92; }
+    .btn-web {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green); color: var(--paper);
+      font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: 0.05em;
+      padding: 14px 28px; border-radius: 5px; text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s, opacity 0.2s;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+    .btn-web:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink2); opacity: 0.92; }
     .hero-version { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 18px; letter-spacing: 0.06em; animation: fadeUp 0.6s 0.4s ease both; }
     .hero-version span { color: var(--green); font-weight: 700; }
 
@@ -284,6 +293,13 @@
       font-size: 13px; color: var(--muted); font-family: var(--mono); line-height: 1.6;
     }
     .demo-note strong { color: var(--accent); }
+    .demo-web-link {
+      margin-top: 14px; padding: 14px 18px;
+      background: rgba(26,122,60,0.07); border: 1px solid rgba(26,122,60,0.22);
+      border-radius: 6px; border-left: 3px solid var(--green);
+      font-size: 13px; color: var(--muted); font-family: var(--mono); line-height: 1.6;
+    }
+    .demo-web-link strong { color: var(--green); }
     .demo-frame-wrap {
       border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
       box-shadow: 0 24px 64px rgba(13,17,23,0.14), 4px 4px 0 var(--border);
@@ -488,6 +504,14 @@
           </svg>
           Live-Demo ausprobieren
         </a>
+        <a href="https://web.frechnung.de" target="_blank" class="btn-web">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          Web-App öffnen
+        </a>
         <a href="https://github.com/FigeloMan/FRechnung.git" target="_blank" class="btn-gh">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
@@ -553,7 +577,7 @@
           liefert FRechnung als <strong style="color:var(--ink)">lokalen Python-Webserver</strong> — gleiche Funktionen, gleiche Oberfläche, direkt im Browser bedienbar.
         </p>
         <p style="font-size:17px; color:#4a5568; margin-bottom:28px;">
-          Ideal für alle, die lieber im Browser arbeiten, eine bestehende Python-Umgebung nutzen oder den Code anpassen möchten.
+          Ideal für alle, die lieber im Browser arbeiten, eine bestehende Python-Umgebung nutzen oder den Code anpassen möchten. Oder direkt online unter <a href="https://web.frechnung.de" target="_blank" class="ic">web.frechnung.de ↗</a> ausprobieren.
         </p>
 
         <div class="web-steps">
@@ -617,7 +641,7 @@
           </div>
           <div class="compare-card compare-card-web">
             <div class="compare-label compare-label-web">WEB-VERSION</div>
-            <div class="compare-list">✓ Im Browser bedienen<br/>✓ Leicht anpassbar<br/>✓ Kein Installer<br/>✓ Gleiche Funktionen</div>
+            <div class="compare-list">✓ Im Browser bedienen<br/>✓ Online unter web.frechnung.de<br/>✓ Leicht anpassbar<br/>✓ Gleiche Funktionen</div>
           </div>
         </div>
 
@@ -739,23 +763,26 @@
         <div class="demo-note">
           <strong>Hinweis:</strong> In der Demo werden Daten nicht dauerhaft gespeichert. Für produktiven Einsatz die Desktop-App herunterladen — sie läuft lokal, schneller und ohne Wartezeit.
         </div>
+        <div class="demo-web-link">
+          <strong>🌐 Immer verfügbar:</strong> Die Web-App läuft dauerhaft unter <a href="https://web.frechnung.de" target="_blank" style="color:var(--green); font-family:var(--mono); font-size:12px; text-decoration:none;">web.frechnung.de ↗</a> — ohne Download, direkt im Browser nutzbar.
+        </div>
       </div>
       <div class="demo-frame-wrap">
         <div class="demo-frame-bar">
           <div class="demo-frame-dot" style="background:#ff5f56"></div>
           <div class="demo-frame-dot" style="background:#ffbd2e"></div>
           <div class="demo-frame-dot" style="background:#27c93f"></div>
-          <div class="demo-frame-url">https://frechnung-production.up.railway.app</div>
+          <div class="demo-frame-url">https://demo.frechnung.de</div>
           <div class="demo-frame-live">Live</div>
         </div>
         <iframe
           id="demo-frame"
-          src="https://frechnung-production.up.railway.app"
+          src="https://demo.frechnung.de"
           title="FRechnung Live-Demo"
           loading="lazy"
           sandbox="allow-scripts allow-same-origin allow-forms allow-downloads"
         ></iframe>
-        <a href="https://frechnung-production.up.railway.app" target="_blank" class="demo-open-btn">
+        <a href="https://demo.frechnung.de" target="_blank" class="demo-open-btn">
           ↗ Demo in neuem Tab öffnen
         </a>
       </div>
@@ -807,7 +834,7 @@
         <div class="datenschutz-section-title">1. Verantwortlicher</div>
         <p>
           Waldemar Friesen (Privatperson / Entwickler)<br/>
-          E-Mail: <a href="/cdn-cgi/l/email-protection#6710060b03020a061501150e021402095427000a060e0b4904080a"><span class="__cf_email__" data-cfemail="8afdebe6eeefe7ebf8ecf8e3eff9efe4b9caede7ebe3e6a4e9e5e7">[email&#160;protected]</span></a>
+          E-Mail: <a href="mailto:info@frechnung.de">info@frechnung.de</a>
         </p>
       </div>
 
@@ -849,9 +876,9 @@
       </div>
 
       <div class="datenschutz-section">
-        <div class="datenschutz-section-title">5. Eingebettete Demo (Railway.app)</div>
+        <div class="datenschutz-section-title">5. Eingebettete Demo (demo.frechnung.de)</div>
         <p>
-          Im Demo-Bereich dieser Website ist eine externe Anwendung via <code style="font-family:var(--mono); font-size:13px; color:var(--accent);">&lt;iframe&gt;</code> von <strong>railway.app</strong> eingebunden. Beim Laden des iFrames wird eine Verbindung zu den Servern von Railway (Railway Corp., USA) hergestellt. Dabei kann deine IP-Adresse verarbeitet werden. Die Nutzung der Demo ist freiwillig.
+          Im Demo-Bereich dieser Website ist eine externe Anwendung via <code style="font-family:var(--mono); font-size:13px; color:var(--accent);">&lt;iframe&gt;</code> von <strong>demo.frechnung.de</strong> eingebunden. Beim Laden des iFrames wird eine Verbindung zu diesem Server hergestellt. Dabei kann deine IP-Adresse verarbeitet werden. Die Nutzung der Demo ist freiwillig.
         </p>
       </div>
 
@@ -899,7 +926,7 @@
     </div>
     <div class="impressum-box">
       <div class="impressum-section"><div class="impressum-section-title">Angaben gemäß § 5 TMG</div><p>Waldemar Friesen<br/>Privatperson / Entwickler</p></div>
-      <div class="impressum-section"><div class="impressum-section-title">Kontakt</div><p>E-Mail: <a href="/cdn-cgi/l/email-protection#05726469616068647763776c6076606b36456268646c692b666a68"><span class="__cf_email__" data-cfemail="d1a6b0bdb5b4bcb0a3b7a3b8b4a2b4bfe291b6bcb0b8bdffb2bebc">[email&#160;protected]</span></a></p></div>
+      <div class="impressum-section"><div class="impressum-section-title">Kontakt</div><p>E-Mail: <a href="mailto:info@frechnung.de">info@frechnung.de</a></p></div>
       <div class="impressum-section"><div class="impressum-section-title">Haftungsausschluss</div><p>FRechnung ist ein privates Open-Source-Projekt und wird ohne Gewähr bereitgestellt. Für die Richtigkeit, Vollständigkeit oder Aktualität der erzeugten Rechnungen übernehme ich keine Haftung. Die Nutzung erfolgt auf eigene Verantwortung. Steuerliche oder rechtliche Fragen sind stets mit einem Fachkundigen zu klären.</p></div>
       <div class="impressum-section"><div class="impressum-section-title">Urheberrecht</div><p>Der Quellcode steht unter der MIT-Lizenz und ist frei verwendbar. Details auf <a href="https://github.com/FigeloMan/FRechnung.git" target="_blank">GitHub</a>.</p></div>
     </div>
@@ -916,7 +943,7 @@
     <div style="max-width:720px; margin:0 auto;">
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Ist FRechnung wirklich kostenlos?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Ja — vollständig. Kein Abo, keine Testphase, keine versteckten Kosten. FRechnung ist Open Source unter der MIT-Lizenz.</p></details>
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Erfüllt FRechnung die gesetzliche E-Rechnungspflicht ab 2025?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">FRechnung erzeugt ZUGFeRD 2.2 / Factur-X konforme PDFs mit eingebettetem EN 16931 XML. Diese werden von Finanzämtern und PEPPOL-Portalen akzeptiert.</p></details>
-      <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Was ist der Unterschied zwischen Desktop und Web-Version?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Die Desktop-App (.exe) braucht kein Python und startet sofort — ideal für die meisten Nutzer. Die Web-Version (Branch <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank" class="ic">web_anwendung ↗</a>) läuft als lokaler Python-Server im Browser — für alle, die lieber im Browser arbeiten oder den Code anpassen möchten.</p></details>
+      <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Was ist der Unterschied zwischen Desktop und Web-Version?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Die Desktop-App (.exe) braucht kein Python und startet sofort — ideal für die meisten Nutzer. Die Web-Version läuft direkt unter <a href="https://web.frechnung.de" target="_blank" class="ic">web.frechnung.de ↗</a> oder lokal als Python-Server (Branch <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank" class="ic">web_anwendung ↗</a>) — für alle, die lieber im Browser arbeiten oder den Code anpassen möchten.</p></details>
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Wie sicher sind meine gespeicherten Firmendaten?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Sehr sicher. Ab v1.1 werden alle Firmendaten mit Fernet-Verschlüsselung (AES-128) als .dat-Datei gespeichert. Der Schlüssel liegt im Windows Credential Store — dem gleichen Tresor wie WLAN-Passwörter. Niemand kann die Datei ohne den passenden Schlüssel lesen.</p></details>
       <details style="border-top:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Werden meine Daten in die Cloud hochgeladen?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">Nein. FRechnung läuft vollständig lokal. Keine Internetverbindung nötig, keine Server, keine Datenübertragung.</p></details>
       <details style="border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:20px 0; cursor:pointer;"><summary style="font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">Warum warnt Windows SmartScreen beim Start?<span style="color:var(--accent); font-size:20px; flex-shrink:0;">+</span></summary><p style="font-size:15px; color:var(--muted); margin-top:12px; line-height:1.7;">SmartScreen zeigt eine Warnung, weil die EXE noch keine Download-Reputation bei Microsoft hat. Der vollständige Quellcode ist öffentlich auf GitHub einsehbar. Einfach „Weitere Informationen" → „Trotzdem ausführen" klicken.</p></details>
@@ -935,7 +962,7 @@
     </div>
     <div class="footer-links">
       <a href="https://github.com/FigeloMan/FRechnung.git" target="_blank">GitHub</a>
-      <a href="https://github.com/FigeloMan/FRechnung/tree/web_anwendung" target="_blank">Web-Version</a>
+      <a href="https://web.frechnung.de" target="_blank">Web-App</a>
       <a href="#sicherheit">Sicherheit</a>
       <a href="#demo">Demo</a>
       <a href="#anleitung">Anleitung</a>
@@ -947,7 +974,6 @@
 </footer>
 
 <script>
-  // COOKIE BANNER
   const COOKIE_KEY = "frechnung_cookie_consent";
   function cookieAccept() {
     try { localStorage.setItem(COOKIE_KEY, "accepted"); } catch(e) {}
@@ -974,7 +1000,6 @@
   })();
 </script>
 <script>
-  // SCROLL ANIMATIONS
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
